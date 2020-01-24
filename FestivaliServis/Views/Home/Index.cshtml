@@ -1,0 +1,102 @@
+﻿<div class="flex-vertical">
+    <div class="flex-between width-100 m3" id="logOutDiv" style="display: none">
+        <span><span>Prijavljeni korisnik:&nbsp;</span><span id="loggedName"></span></span>
+        <button class="btn btn-default" id="btnLogOut">Odjava</button>
+    </div>
+    <div class="flex-vertical" id="logFormDiv">
+        <h1>Prijava</h1>
+        <form class="form-container" id="logForm">
+            <div class="flex-between m3">
+                <label>Korisnicko ime:</label>
+                <input type="text" id="user">
+            </div>
+            <div class="flex-between m3">
+                <label>Lozinka:</label>
+                <input type="password" id="pass">
+            </div>
+
+            <div class="flex-around m3">
+                <button type="button" class="btn btn-default" id="btnLog">Prijava</button>
+                <button type="button" class="btn btn-custom" id="btnShowReg">Registracija</button>
+            </div>
+        </form>
+    </div>
+    <div class="flex-vertical" id="regFormDiv" style="display:none;">
+        <h1>Registracija</h1>
+        <form class="form-container" id="regForm">
+            <div class="flex-between m3">
+                <label>Korisnicko ime:</label>
+                <input type="text" id="regUser">
+            </div>
+            <div class="flex-between m3">
+                <label>Lozinka:</label>
+                <input type="password" id="regPass">
+            </div>
+            <div class="flex-between m3">
+                <label>Ponovi lozinku:</label>
+                <input type="password" id="regConfirm">
+            </div>
+            <div class="flex-center">
+                <button type="button" class="btn btn-default" id="btnReg">Registruj se</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="loader" id="loader-4" style="display:block;">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="flex-vertical" id="data"></div>
+
+    <div class="flex-vertical" id="filterFormDiv" style="display:none;">
+        <h2>Pretraga festivala</h2>
+
+        <form id="filterForm" class="flex-between form-container-lg">
+            <div class="flex-center">
+                <div class="flex-center m3">
+                    <span>Start:</span>
+                    <input min="0" type="number" id="filterMin">
+                </div>
+                <div class="flex-center m3">
+                    <span>Kraj:</span>
+                    <input min="0" type="number" id="filterMax">
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-default">Pretraga</button>
+            </div>
+        </form>
+    </div>
+    <div id="editFormDiv" class="flex-vertical" style="display:none;">
+        <h2>Dodavanje novog festivala</h2>
+        <form id="editForm" class="form-container">
+            <div class="flex-between m3">
+                <label>Naziv:</label>
+                <input type="text" id="edtNaziv">
+            </div>
+            <div class="flex-between m3">
+                <label>Cena:</label>
+                <input min="1" type="number" step=".01" id="edtCena">
+            </div>
+            <div class="flex-between m3">
+                <label>Prvo Odrzavanje:</label>
+                <input min="1951" max="2017" type="number" id="edtGodina">
+            </div>
+            <div class="flex-between m3">
+                <label>Mesto:</label>
+                <select id="edtSelect"></select>
+            </div>
+            <div class="flex-around m3">
+                <button type="submit" class="btn btn-default">Dodavanje</button>
+                <button id="btnOdustajanje" type="reset" class="btn btn-custom">Odustajanje</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+    @section Scripts{
+        @Scripts.Render("~/Scripts/Skripta.js")
+    }
